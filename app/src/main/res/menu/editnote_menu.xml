@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Undo"
+        android:id="@+id/undo_item"
+        android:icon="@drawable/ic_baseline_undo_24"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:title="Redo"
+        android:id="@+id/redo_item"
+        android:icon="@drawable/ic_baseline_redo_24"
+        app:showAsAction="always">
+    </item>
+<!--    <item-->
+<!--        android:title="Change background color"-->
+<!--        android:id="@+id/changebackground_item"-->
+<!--        android:icon="@drawable/ic_baseline_color_lens_24"-->
+<!--        app:showAsAction="always">-->
+<!--    </item>-->
+    <item
+        android:title="Save"
+        android:id="@+id/save_item"
+        android:icon="@drawable/ic_baseline_done_24"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:title="Add tag"
+        android:id="@+id/addtag_item">
+    </item>
+    <item
+        android:title="Delete"
+        android:id="@+id/delete_item"
+        app:showAsAction="collapseActionView">
+    </item>
+</menu>

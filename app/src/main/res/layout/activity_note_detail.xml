@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:title="" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/title_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <EditText
+        android:id="@+id/title_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/titleInput_hint"
+        android:inputType="textPersonName"
+        android:textColorHint="?android:attr/textColorHint"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup2"
+        android:forceDarkAllowed="false"/>
+
+    <jp.wasabeef.richeditor.RichEditor
+        android:id="@+id/content_edit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:gravity="top|left"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/editor_toolbar_scrollview"
+        app:layout_constraintEnd_toEndOf="@+id/title_edit"
+        app:layout_constraintTop_toBottomOf="@+id/title_edit" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/editor_toolbar_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:measureAllChildren="true"
+        android:scrollbars="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/modifiedDateDetail_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/editor_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/bold_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_bold_24" />
+
+            <ImageButton
+                android:id="@+id/italic_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_italic_24" />
+
+            <ImageButton
+                android:id="@+id/underline_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_underlined_24" />
+            <ImageButton
+                android:id="@+id/checkbox_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_check_box_24" />
+            <ImageButton
+                android:id="@+id/alignCenter_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_align_center_24" />
+
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/alignJustify_button"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_margin="8dp"-->
+            <!--                android:background="?android:attr/selectableItemBackground"-->
+            <!--                android:src="@drawable/ic_baseline_format_align_justify_24" />-->
+
+            <ImageButton
+                android:id="@+id/alignLeft_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_align_left_24" />
+
+            <ImageButton
+                android:id="@+id/alignRight_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_align_right_24" />
+
+            <ImageButton
+                android:id="@+id/list_numbered_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_list_numbered_24" />
+
+            <ImageButton
+                android:id="@+id/list_bulleted_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_list_bulleted_24" />
+
+            <ImageButton
+                android:id="@+id/textBackColor_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_color_fill_24" />
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/textForeColor_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:src="@drawable/ic_baseline_format_color_text_24" />-->
+
+            <ImageButton
+                android:id="@+id/strikethrough_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_strikethrough_s_24" />
+
+            <ImageButton
+                android:id="@+id/removeFormat_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_format_clear_24" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/modifiedDateDetail_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/tags_chipgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/title_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+    </com.google.android.material.chip.ChipGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_allnote_item"
+        android:icon="@drawable/ic_baseline_sticky_note_2_24"
+        android:title="@string/all_notes">
+    </item>
+    <item
+        android:id="@+id/nav_alltag_item"
+        android:icon="@drawable/ic_baseline_tag_24"
+        android:title= "@string/all_tags">
+    </item>
+</menu>
